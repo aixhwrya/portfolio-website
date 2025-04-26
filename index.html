@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aishwarya Ravi - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            background-color: #A8D5BA;
+            color: #000;
+        }
+        header {
+            background-color: #000;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1, header h2 {
+            margin: 10px 0;
+            color: #fff;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            background-color: #A8D5BA;
+            margin: 0;
+        }
+        nav ul li {
+            margin: 10px 20px;
+        }
+        nav ul li a {
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #00d4ff;
+        }
+        section {
+            padding: 40px;
+            text-align: center;
+        }
+        .project {
+            background: #fff;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 10px;
+            transition: transform 0.3s;
+            color: #000;
+        }
+        .project:hover {
+            transform: scale(1.03);
+        }
+        .about-photo {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .about-photo img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            border: 3px solid #000;
+            transition: transform 0.3s ease;
+        }
+        .about-photo img:hover {
+            transform: scale(1.05);
+        }
+        #contactForm {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        #contactForm label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        #contactForm input, #contactForm textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+        }
+        #contactForm button {
+            width: 100%;
+            padding: 10px;
+            background-color: #000;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #contactForm button:hover {
+            background-color: #00d4ff;
+            color: black;
+        }
+        footer {
+            background-color: #000;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 40px;
+        }
+        .profile-pic {
+            width: 200px;
+            height: 250px;
+            border-radius: 15px;
+            margin: 20px auto 10px;
+            display: block;
+            object-fit: cover;
+            border: 4px solid #A8D5BA;
+            background-color: white;
+        }
+        .achievements-photo {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.achievements-photo img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    border: 3px solid #000;
+    transition: transform 0.3s ease;
+}
+
+.achievements-photo img:hover {
+    transform: scale(1.05);
+}
+
+        .about-section p {
+            max-width: 800px;
+            margin: 20px auto;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="pasportp.jpg" alt="Aishwarya Ravi" class="profile-pic">
+        <h1>Welcome to My Portfolio</h1>
+        <h2>I'm Aishwarya Ravi, a passionate web developer.</h2>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about" class="about-section">
+        <h2>About Me</h2>
+        <p>Hello! I’m <strong>Aishwarya Ravi</strong>, a passionate <strong>web developer</strong> with over <strong>3 years of experience</strong> in building interactive applications and managing database-driven systems. My technical expertise spans <strong>HTML, CSS, JavaScript, Node.js, and MySQL</strong>.</p>
+        <p>I developed <strong>FashhTrack</strong>, a boutique management system, during my college journey, and honed my skills in <strong>data analysis</strong>, <strong>Excel management</strong>, and understanding business processes during my internships. I am deeply committed to innovation and dream of establishing my own tech company in the future.</p>
+
+        <h3>Volleyball Career</h3>
+        <p>Beyond academics, I am a proud <strong>national-level volleyball player</strong>. Representing my school and state at various tournaments taught me the value of <strong>teamwork</strong>, <strong>discipline</strong>, and <strong>leadership</strong> — lessons that continue to shape my approach to projects and collaboration.</p>
+
+        <h3>School Achievements</h3>
+        <p>I completed my schooling at <strong>St. Xavier’s Sr. Sec. School, Jaipur</strong>, excelling both academically and in extracurricular activities. I achieved <strong>89% in 10th grade</strong> and <strong>80% in 12th grade</strong>, while actively participating in <strong>debates</strong>, <strong>cultural events</strong>, and <strong>sports meets</strong> that nurtured my leadership and communication skills.</p>
+        
+        <div class="achievements-photo">
+        <img src="achievementinschool.jpg" alt="Achievements">
+    </div>
+        <div style="margin-top: 20px;">
+            <a href="CV_Aishwarya_Ravi.pdf" target="_blank" style="text-decoration: none;">
+                <button style="padding: 12px 25px; background-color: #000; color: white; border: none; border-radius: 5px; font-size: 16px; font-weight: bold; cursor: pointer; transition: background-color 0.3s;">
+                    📄 View My Resume
+                </button>
+            </a>
+        </div>
+
+        <div class="about-photo">
+            <img src="photo1.jpg" alt="Aishwarya Speaking">
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <h2>My Projects</h2>
+        <div class="project">
+            <h3>Aesthetic Calculator</h3>
+            <p>A web application for performing calculations with a unique aesthetic.</p>
+            <a href="https://aixhwrya.github.io/AestheticCalc/" target="_blank">View Project</a>
+        </div>
+        <div class="project">
+            <h3>Hangman Web App</h3>
+            <p>A fun and interactive Hangman game designed for kids in my NGO.</p>
+            <a href="https://aixhwrya.github.io/Hangman-web-app/" target="_blank">View Project</a>
+        </div>
+        <div class="project">
+            <h3>FashhTrack</h3>
+            <p>A boutique management system project.</p>
+            <a href="https://github.com/aixhwrya/Fashhtrack" target="_blank">View on GitHub</a>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contactForm" action="https://formspree.io/f/xwpopnow" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <p>Email: <a href="mailto:aishwarya101ravi@gmail.com">aishwarya101ravi@gmail.com</a></p>
+        <p>Phone: 7300101413</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Aishwarya Ravi. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
