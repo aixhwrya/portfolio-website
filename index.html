@@ -75,18 +75,6 @@
       transform: translateY(0);
     }
 
-    .about-photo img {
-      width: 300px;
-      border-radius: 10px;
-      border: 3px solid #e50914;
-      margin-top: 20px;
-      transition: transform 0.3s ease;
-    }
-
-    .about-photo img:hover {
-      transform: scale(1.05);
-    }
-
     a.button-link {
       display: inline-block;
       margin-top: 20px;
@@ -104,48 +92,9 @@
       color: #e50914;
     }
 
-    #contactForm {
-      max-width: 600px;
-      margin: 0 auto;
-      text-align: left;
-    }
-
-    #contactForm input,
-    #contactForm textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0 20px;
-      border-radius: 5px;
-      border: none;
-    }
-
-    #contactForm button {
-      background-color: #e50914;
-      border: none;
-      padding: 12px;
-      width: 100%;
-      font-weight: bold;
-      color: #fff;
-      border-radius: 5px;
-      transition: 0.3s;
-    }
-
-    #contactForm button:hover {
-      background-color: #fff;
-      color: #e50914;
-    }
-
-    footer {
-      background-color: #111;
-      text-align: center;
-      padding: 15px;
-      color: #888;
-      margin-top: 40px;
-    }
-
     .back-button {
       display: block;
-      margin: 40px auto 0;
+      margin: 20px auto;
       padding: 10px 20px;
       background-color: #e50914;
       color: white;
@@ -167,19 +116,19 @@
   <div id="profile-screen">
     <h1>Welcome to Aishwarya's Portfolio</h1>
     <div class="profiles">
-      <div class="profile" onclick="showPortfolio()">
+      <div class="profile" onclick="showSection('about')">
         <img src="red-fuzzy.png" alt="About" />
         <div class="profile-name">About</div>
       </div>
-      <div class="profile" onclick="showPortfolio()">
+      <div class="profile" onclick="showSection('certifications')">
         <img src="yellow-fuzzy.png" alt="Certifications" />
         <div class="profile-name">Certifications</div>
       </div>
-      <div class="profile" onclick="showPortfolio()">
+      <div class="profile" onclick="showSection('projects')">
         <img src="blue-fuzzy.png" alt="Projects" />
         <div class="profile-name">Projects</div>
       </div>
-      <div class="profile" onclick="showPortfolio()">
+      <div class="profile" onclick="showSection('contact')">
         <img src="grey-fuzzy.png" alt="Contact Me" />
         <div class="profile-name">Contact Me</div>
       </div>
@@ -187,6 +136,8 @@
   </div>
 
   <div id="main-content">
+    <div class="back-button" onclick="goBack()">← Back to Profile Selection</div>
+
     <section id="about" class="card">
       <h2>About Me</h2>
       <p>Hi! I’m <strong>Aishwarya Ravi</strong>, a passionate web developer with 3+ years of experience. I specialize in <strong>HTML, CSS, JavaScript, Node.js, and MySQL</strong>.</p>
@@ -195,7 +146,14 @@
 
     <section id="certifications" class="card">
       <h2>Certifications</h2>
-      <p>Certified in <strong>Digital Marketing (Google)</strong>, <strong>Sports Marketing (Coursera)</strong>, and <strong>Data Analysis (Microsoft)</strong>.</p>
+      <ul>
+        <li>Data Analytics and Visualization Job Simulation at ACCENTURE North America by Forage.</li>
+        <li>Digital Engineering by NASSCOM.</li>
+        <li>Cyber security basics course by Coursera.</li>
+        <li>Network fundamentals course by Infosys.</li>
+        <li>Agile Project Management by HP Life.</li>
+        <li>Data Science & Analytics by HP Life.</li>
+      </ul>
     </section>
 
     <section id="projects" class="card">
@@ -234,9 +192,27 @@
   </div>
 
   <script>
+    function showSection(sectionId) {
+      document.getElementById("profile-screen").style.display = "none";
+      document.getElementById("main-content").style.display = "block";
+
+      const sections = ["about", "certifications", "projects", "contact"];
+      sections.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.style.display = id === sectionId ? "block" : "none";
+          if (id === sectionId) {
+            el.classList.add("reveal");
+          }
+        }
+      });
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
     function showPortfolio() {
       document.getElementById("profile-screen").style.display = "none";
       document.getElementById("main-content").style.display = "block";
+      document.querySelectorAll(".card").forEach(card => card.style.display = "block");
       document.querySelectorAll(".card").forEach(card => card.classList.add("reveal"));
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
