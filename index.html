@@ -1,112 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Welcome to Aishwarya's Portfolio</title>
+  <meta charset="UTF-8">
+  <title>Who's Watching?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
-    /* Reset and Base */
     body {
       margin: 0;
+      background-color: #141414;
+      color: white;
       font-family: 'Roboto', sans-serif;
-      background-color: #141414;
-      color: #fff;
-      overflow-x: hidden;
     }
 
-    /* Netflix-style Loading */
-    #loader {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      background: #141414;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-    }
-
-    .netflix-spinner {
-      width: 100px;
-      height: 4px;
-      background: linear-gradient(90deg, #e50914 0%, #000 50%, #e50914 100%);
-      animation: loading 1s infinite linear;
-    }
-
-    @keyframes loading {
-      0% { background-position: 0% 0; }
-      100% { background-position: 100% 0; }
-    }
-
-    header {
-      background-color: #111;
-      padding: 30px;
-      text-align: center;
-    }
-
-    header h1 {
+    h1 {
       font-size: 2.5rem;
-      color: #e50914;
-      margin-bottom: 10px;
-    }
-
-    .typing {
-      font-weight: 400;
-      color: #fff;
-      font-size: 1.2rem;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 2px solid #fff;
-      width: 0;
-      animation: typing 3s steps(40, end) forwards, blink 0.75s step-end infinite;
-      display: inline-block;
-    }
-
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-
-    @keyframes blink {
-      50% { border-color: transparent; }
-    }
-
-    nav ul {
-      display: flex;
-      justify-content: center;
-      padding: 0;
-      list-style: none;
-      margin: 0;
-      background-color: #141414;
-    }
-
-    nav ul li {
-      margin: 0 20px;
-    }
-
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: #e50914;
-    }
-
-    section {
-      padding: 40px 20px;
       text-align: center;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.6s ease;
+      margin-top: 60px;
     }
 
-    section.reveal {
-      opacity: 1;
-      transform: translateY(0);
+    .profiles {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    .profile {
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .profile img {
+      width: 150px;
+      height: 150px;
+      border-radius: 10px;
+      object-fit: cover;
+      border: 4px solid transparent;
+      transition: transform 0.3s, border 0.3s;
+    }
+
+    .profile:hover img {
+      transform: scale(1.1);
+      border-color: #e50914;
+    }
+
+    .profile-name {
+      margin-top: 10px;
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+
+    #main-content {
+      display: none;
     }
 
     .card {
@@ -117,10 +65,14 @@
       max-width: 900px;
       box-shadow: 0 0 10px rgba(229, 9, 20, 0.5);
       transition: transform 0.3s ease;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.6s ease;
     }
 
-    .card:hover {
-      transform: scale(1.02);
+    .card.reveal {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .about-photo img {
@@ -188,109 +140,101 @@
       text-align: center;
       padding: 15px;
       color: #888;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Netflix-style Loading Screen -->
-  <div id="loader">
-    <div class="netflix-spinner"></div>
+  <div id="profile-screen">
+    <h1>Who’s watching?</h1>
+    <div class="profiles">
+      <div class="profile" onclick="showPortfolio()">
+        <img src="red-fuzzy.png" alt="Scarlett" />
+        <div class="profile-name">Scarlett</div>
+      </div>
+      <div class="profile" onclick="showPortfolio()">
+        <img src="yellow-fuzzy.png" alt="Sunny" />
+        <div class="profile-name">Sunny</div>
+      </div>
+      <div class="profile" onclick="showPortfolio()">
+        <img src="blue-fuzzy.png" alt="Robin" />
+        <div class="profile-name">Robin</div>
+      </div>
+      <div class="profile" onclick="showPortfolio()">
+        <img src="grey-fuzzy.png" alt="Dusty" />
+        <div class="profile-name">Dusty</div>
+      </div>
+    </div>
   </div>
 
-  <!-- Main Content -->
-  <header>
-    <h1>Welcome to Aishwarya's Portfolio</h1>
-    <h2><span class="typing">Web Developer | Athlete | Tech Enthusiast</span></h2>
-  </header>
+  <div id="main-content">
+    <header>
+      <h1>Welcome to Aishwarya's Portfolio</h1>
+    </header>
 
-  <nav>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#sports">Sports</a></li>
-      <li><a href="#certifications">Certifications</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+    <section id="about" class="card">
+      <h2>About Me</h2>
+      <p>Hi! I’m <strong>Aishwarya Ravi</strong>, a passionate web developer with 3+ years of experience in building full-stack applications. I specialize in <strong>HTML, CSS, JavaScript, Node.js, and MySQL</strong>.</p>
+      <p>I completed my schooling at <strong>St. Xavier’s Sr. Sec. School, Jaipur</strong>, where I excelled in academics and actively participated in debates, cultural events, and sports meets.</p>
+      <div class="about-photo">
+        <img src="achievementinschool.jpg" alt="Achievements at School">
+      </div>
+      <div class="about-photo">
+        <img src="photo1.jpg" alt="Aishwarya Speaking">
+      </div>
+      <a href="CV_Aishwarya_Ravi.pdf" class="button-link" target="_blank">📄 View My Resume</a>
+    </section>
 
-  <section id="about" class="card">
-    <h2>About Me</h2>
-    <p>Hi! I’m <strong>Aishwarya Ravi</strong>, a passionate web developer with 3+ years of experience in building full-stack applications. I specialize in <strong>HTML, CSS, JavaScript, Node.js, and MySQL</strong>. My journey includes building FashhTrack, a boutique management system, and actively contributing to NGO projects.</p>
-    
-    <p>I completed my schooling at <strong>St. Xavier’s Sr. Sec. School, Jaipur</strong>, where I excelled in academics and actively participated in debates, cultural events, and sports meets — shaping my leadership and communication skills.</p>
+    <section id="sports" class="card">
+      <h2>Sports Journey</h2>
+      <p>I am a <strong>national-level volleyball player</strong> who has represented my state and school across tournaments.</p>
+    </section>
 
-    <div class="about-photo">
-      <img src="achievementinschool.jpg" alt="Achievements at School">
-    </div>
+    <section id="certifications" class="card">
+      <h2>Certifications</h2>
+      <p>Certified in <strong>Digital Marketing (Google)</strong>, <strong>Sports Marketing (Coursera)</strong>, and <strong>Data Analysis (Microsoft)</strong>.</p>
+    </section>
 
-    <div class="about-photo">
-      <img src="photo1.jpg" alt="Aishwarya Speaking">
-    </div>
+    <section id="projects" class="card">
+      <h2>Projects</h2>
+      <p><strong>Aesthetic Calculator</strong> – Stylish calculator web app<br>
+        <a href="https://aixhwrya.github.io/AestheticCalc/" class="button-link" target="_blank">View Calculator</a>
+      </p>
+      <p><strong>Hangman Web App</strong> – Fun game for kids at the NGO<br>
+        <a href="https://aixhwrya.github.io/Hangman-web-app/" class="button-link" target="_blank">Play Hangman</a>
+      </p>
+      <p><strong>FashhTrack</strong> – Full-stack boutique management system<br>
+        <a href="https://github.com/aixhwrya/Fashhtrack" class="button-link" target="_blank">View on GitHub</a>
+      </p>
+    </section>
 
-    <a href="CV_Aishwarya_Ravi.pdf" class="button-link" target="_blank">📄 View My Resume</a>
-  </section>
+    <section id="contact" class="card">
+      <h2>Contact Me</h2>
+      <form id="contactForm" action="https://formspree.io/f/xwpopnow" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <p style="margin-top: 20px;">📧 <a href="mailto:aishwarya101ravi@gmail.com" style="color:#e50914;">aishwarya101ravi@gmail.com</a></p>
+      <p>📞 7300101413</p>
+    </section>
 
-  <section id="sports" class="card">
-    <h2>Sports Journey</h2>
-    <p>I am a <strong>national-level volleyball player</strong> who has represented my state and school across tournaments. Sports instilled in me teamwork, discipline, and a never-give-up mindset that reflects in my work.</p>
-  </section>
-
-  <section id="certifications" class="card">
-    <h2>Certifications</h2>
-    <p>Certified in <strong>Digital Marketing (Google)</strong>, <strong>Sports Marketing (Coursera)</strong>, and <strong>Data Analysis (Microsoft)</strong>. These helped me blend creativity with technical strategy in real-world projects.</p>
-  </section>
-
-  <section id="projects" class="card">
-    <h2>Projects</h2>
-    <p><strong>Aesthetic Calculator</strong> – Stylish calculator web app<br>
-      <a href="https://aixhwrya.github.io/AestheticCalc/" class="button-link" target="_blank">View Calculator</a>
-    </p>
-    <p><strong>Hangman Web App</strong> – Fun game for kids at the NGO<br>
-      <a href="https://aixhwrya.github.io/Hangman-web-app/" class="button-link" target="_blank">Play Hangman</a>
-    </p>
-    <p><strong>FashhTrack</strong> – Full-stack boutique management system<br>
-      <a href="https://github.com/aixhwrya/Fashhtrack" class="button-link" target="_blank">View on GitHub</a>
-    </p>
-  </section>
-
-  <section id="contact" class="card">
-    <h2>Contact Me</h2>
-    <form id="contactForm" action="https://formspree.io/f/xwpopnow" method="POST">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required />
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required />
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-    <p style="margin-top: 20px;">📧 <a href="mailto:aishwarya101ravi@gmail.com" style="color:#e50914;">aishwarya101ravi@gmail.com</a></p>
-    <p>📞 7300101413</p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Aishwarya Ravi. All rights reserved.</p>
-  </footer>
+    <footer>
+      <p>&copy; 2025 Aishwarya Ravi. All rights reserved.</p>
+    </footer>
+  </div>
 
   <script>
-    // Page Load Fade
-    window.addEventListener("load", () => {
-      document.getElementById("loader").style.display = "none";
-    });
-
-    // Section Reveal on Scroll
-    const sections = document.querySelectorAll("section");
-    const revealOnScroll = () => {
-      const triggerBottom = window.innerHeight * 0.85;
-      sections.forEach(section => {
-        const top = section.getBoundingClientRect().top;
-        if (top < triggerBottom) section.classList.add("reveal");
-      });
-    };
-
-    window.addEventListener("scroll", revealOnScroll);
-    window.addEventListener("load", revealOnScroll);
+    function showPortfolio() {
+      document.getElementById("profile-screen").style.display = "none";
+      document.getElementById("main-content").style.display = "block";
+      document.querySelectorAll(".card").forEach(card => card.classList.add("reveal"));
+    }
   </script>
 </body>
 </html>
