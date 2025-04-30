@@ -94,8 +94,8 @@
 
     .back-button {
       display: block;
-      margin: 20px auto;
-      padding: 10px 20px;
+      margin: 40px auto;
+      padding: 12px 25px;
       background-color: #e50914;
       color: white;
       font-weight: bold;
@@ -103,11 +103,73 @@
       text-align: center;
       width: fit-content;
       cursor: pointer;
+      transition: 0.3s;
     }
 
     .back-button:hover {
       background-color: #fff;
       color: #e50914;
+    }
+
+    #contactForm {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    #contactForm label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    #contactForm input,
+    #contactForm textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      margin-bottom: 15px;
+    }
+
+    #contactForm button {
+      background-color: #e50914;
+      border: none;
+      padding: 12px 20px;
+      font-weight: bold;
+      color: #fff;
+      border-radius: 5px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    #contactForm button:hover {
+      background-color: #fff;
+      color: #e50914;
+    }
+
+    .contact-info {
+      margin-top: 20px;
+      text-align: left;
+      padding-left: 10px;
+    }
+
+    .contact-info p {
+      margin: 8px 0;
+    }
+
+    .contact-info i {
+      margin-right: 8px;
+      color: #e50914;
+    }
+
+    footer {
+      background-color: #111;
+      text-align: center;
+      padding: 15px;
+      color: #888;
+      margin-top: 40px;
     }
   </style>
 </head>
@@ -136,8 +198,6 @@
   </div>
 
   <div id="main-content">
-    <div class="back-button" onclick="goBack()">← Back to Profile Selection</div>
-
     <section id="about" class="card">
       <h2>About Me</h2>
       <p>Hi! I’m <strong>Aishwarya Ravi</strong>, a passionate web developer with 3+ years of experience. I specialize in <strong>HTML, CSS, JavaScript, Node.js, and MySQL</strong>.</p>
@@ -174,14 +234,19 @@
       <form id="contactForm" action="https://formspree.io/f/xwpopnow" method="POST">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required />
+
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required />
+
         <label for="message">Message:</label>
         <textarea id="message" name="message" required></textarea>
+
         <button type="submit">Send Message</button>
       </form>
-      <p style="margin-top: 20px;">📧 <a href="mailto:aishwarya101ravi@gmail.com" style="color:#e50914;">aishwarya101ravi@gmail.com</a></p>
-      <p>📞 7300101413</p>
+      <div class="contact-info">
+        <p><i>📧</i> <a href="mailto:aishwarya101ravi@gmail.com" style="color:#e50914;">aishwarya101ravi@gmail.com</a></p>
+        <p><i>📞</i> 7300101413</p>
+      </div>
     </section>
 
     <div class="back-button" onclick="goBack()">← Back to Profile Selection</div>
@@ -206,14 +271,6 @@
           }
         }
       });
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-
-    function showPortfolio() {
-      document.getElementById("profile-screen").style.display = "none";
-      document.getElementById("main-content").style.display = "block";
-      document.querySelectorAll(".card").forEach(card => card.style.display = "block");
-      document.querySelectorAll(".card").forEach(card => card.classList.add("reveal"));
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
