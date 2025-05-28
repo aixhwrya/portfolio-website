@@ -8,29 +8,33 @@
   <style>
     :root {
       --teal: #00796b;
-      --light: #fff8f3;
-      --bg-light: #e0f7f7;
-      --dark: #1e1e1e;
+      --light-bg: #fdfdfd;
+      --card-bg: #e6f7f7;
+      --text-dark: #222;
+      --text-light: #f0f0f0;
       --accent: #ff6f61;
     }
 
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      background-color: var(--light);
-      color: #333;
+      background-color: var(--light-bg);
+      color: var(--text-dark);
       transition: background 0.3s, color 0.3s;
     }
 
     .dark-mode {
-      background-color: var(--dark);
-      color: #f0f0f0;
+      background-color: #121212;
+      color: var(--text-light);
+    }
+
+    .dark-mode section {
+      background-color: #1f1f1f;
     }
 
     header {
       text-align: center;
       padding: 30px 20px 10px;
-      background-color: var(--bg-light);
     }
 
     header h1 {
@@ -40,7 +44,7 @@
     }
 
     #themeToggle {
-      position: absolute;
+      position: fixed;
       right: 20px;
       top: 20px;
       background-color: var(--teal);
@@ -49,18 +53,50 @@
       padding: 10px 20px;
       border-radius: 20px;
       cursor: pointer;
-      transition: background 0.3s;
+      z-index: 999;
     }
 
     #themeToggle:hover {
       background-color: var(--accent);
     }
 
+    .nav-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 20px auto;
+      max-width: 800px;
+    }
+
+    .nav-button {
+      background-color: var(--teal);
+      color: white;
+      border-radius: 12px;
+      padding: 15px 20px;
+      text-align: center;
+      cursor: pointer;
+      flex: 1 1 150px;
+      transition: transform 0.2s;
+      text-decoration: none;
+    }
+
+    .nav-button i {
+      display: block;
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .nav-button:hover {
+      transform: scale(1.05);
+      background-color: var(--accent);
+    }
+
     section {
       max-width: 900px;
-      margin: 30px auto;
-      padding: 20px;
-      background-color: var(--bg-light);
+      margin: 40px auto;
+      padding: 25px;
+      background-color: var(--card-bg);
       border-radius: 10px;
     }
 
@@ -75,11 +111,11 @@
     }
 
     .socials a {
-      margin: 0 10px;
+      margin: 0 12px;
       display: inline-block;
       text-decoration: none;
       color: var(--teal);
-      font-weight: 600;
+      font-weight: bold;
     }
 
     .gallery {
@@ -94,28 +130,11 @@
       height: 200px;
       object-fit: cover;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       transition: transform 0.3s;
     }
 
     .gallery img:hover {
       transform: scale(1.05);
-    }
-
-    .gallery-btn {
-      display: block;
-      margin: 0 auto 20px;
-      background-color: var(--teal);
-      color: white;
-      border: none;
-      padding: 10px 25px;
-      font-size: 16px;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    .gallery-btn:hover {
-      background-color: var(--accent);
     }
 
     .project a {
@@ -126,7 +145,7 @@
     footer {
       text-align: center;
       padding: 20px;
-      background-color: var(--bg-light);
+      background-color: var(--card-bg);
       color: #555;
     }
   </style>
@@ -138,6 +157,14 @@
   <header>
     <h1>Welcome to Aishwarya's Portfolio</h1>
   </header>
+
+  <div class="nav-buttons">
+    <a href="#about" class="nav-button"><i class="fas fa-user"></i> About</a>
+    <a href="#certifications" class="nav-button"><i class="fas fa-certificate"></i> Certifications</a>
+    <a href="#projects" class="nav-button"><i class="fas fa-code"></i> Projects</a>
+    <a href="#gallery" class="nav-button"><i class="fas fa-image"></i> Gallery</a>
+    <a href="#contact" class="nav-button"><i class="fas fa-envelope"></i> Contact</a>
+  </div>
 
   <section id="about">
     <h2>About Me</h2>
@@ -176,32 +203,32 @@
 
   <section id="projects">
     <h2>Projects</h2>
-    <div class="project">
-      <p><strong>Aesthetic Calculator</strong> – A stylish calculator with animated transitions.<br>
-      <a href="https://aixhwrya.github.io/AestheticCalc/" target="_blank">View Project</a></p>
-    </div>
-    <div class="project">
-      <p><strong>Hangman Web App</strong> – An interactive word guessing game built with JavaScript.<br>
-      <a href="https://aixhwrya.github.io/Hangman-web-app/" target="_blank">Play Game</a></p>
-    </div>
-    <div class="project">
-      <p><strong>FashhTrack</strong> – A boutique management system handling orders, inventory, and design tracking.<br>
-      <a href="https://github.com/aixhwrya/Fashhtrack" target="_blank">View on GitHub</a></p>
-    </div>
+    <p><strong>Aesthetic Calculator</strong> – A stylish calculator with animated transitions.<br>
+    <a href="https://aixhwrya.github.io/AestheticCalc/" target="_blank">View Project</a></p>
+
+    <p><strong>Hangman Web App</strong> – An interactive word guessing game built with JavaScript.<br>
+    <a href="https://aixhwrya.github.io/Hangman-web-app/" target="_blank">Play Game</a></p>
+
+    <p><strong>FashhTrack</strong> – A boutique management system handling orders, inventory, and design tracking.<br>
+    <a href="https://github.com/aixhwrya/Fashhtrack" target="_blank">View on GitHub</a></p>
   </section>
 
   <section id="gallery">
     <h2>Gallery</h2>
-    <button class="gallery-btn" onclick="document.getElementById('galleryGrid').scrollIntoView({behavior:'smooth'})">View Photos</button>
-    <div class="gallery" id="galleryGrid">
+    <div class="gallery">
       <img src="image1.jpg" alt="Gallery Image 1">
       <img src="image2.jpg" alt="Gallery Image 2">
       <img src="image3.jpg" alt="Gallery Image 3">
       <img src="image4.jpg" alt="Gallery Image 4">
       <img src="image5.jpg" alt="Gallery Image 5">
-      
-
+     
     </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>You can reach out to me at: <strong>aishwarya101ravi@gmail.com</strong></p>
+    <p>Phone: <strong>+91 7300101413</strong></p>
   </section>
 
   <footer>
