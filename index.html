@@ -2,315 +2,236 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Welcome to Aishwarya's Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aishwarya Ravi | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
       margin: 0;
-      background-color: #141414;
-      color: white;
       font-family: 'Roboto', sans-serif;
+      background-color: #fdf6f0;
+      color: #1a1a1a;
+      transition: background 0.3s, color 0.3s;
     }
 
     .light-mode {
-      background-color: #f5f5f5;
-      color: #141414;
+      background-color: #ffffff;
+      color: #1a1a1a;
     }
 
-    .light-mode .card {
+    header {
+      text-align: center;
+      padding: 30px 20px 10px;
+      position: relative;
+    }
+
+    #themeToggle {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      padding: 10px 20px;
+      border-radius: 20px;
+      border: none;
+      background-color: #f67280;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #themeToggle:hover {
       background-color: #fff;
-      box-shadow: 0 0 10px rgba(20, 20, 20, 0.2);
-    }
-
-    .light-mode a.button-link {
-      background-color: #141414;
-      color: white;
-    }
-
-    .light-mode a.button-link:hover {
-      background-color: #e50914;
-      color: white;
-    }
-
-    .light-mode .back-button {
-      background-color: #141414;
-      color: white;
-    }
-
-    .light-mode .back-button:hover {
-      background-color: #e50914;
-      color: white;
+      color: #f67280;
     }
 
     h1 {
       font-size: 2.5rem;
-      text-align: center;
-      margin-top: 60px;
+      margin-bottom: 20px;
     }
 
-    .profiles {
-      display: flex;
-      gap: 40px;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 40px;
-    }
-
-    .profile {
-      text-align: center;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-
-    .profile img {
-      width: 150px;
-      height: 150px;
-      border-radius: 10px;
-      object-fit: cover;
-      border: 4px solid transparent;
-      transition: transform 0.3s, border 0.3s;
-    }
-
-    .profile:hover img {
-      transform: scale(1.1);
-      border-color: #e50914;
-    }
-
-    .profile-name {
-      margin-top: 10px;
-      font-size: 1.1rem;
-      color: #ccc;
-    }
-
-    #main-content {
-      display: none;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
 
     .card {
-      background-color: #222;
-      margin: 20px auto;
-      padding: 30px;
-      border-radius: 10px;
-      max-width: 900px;
-      box-shadow: 0 0 10px rgba(229, 9, 20, 0.5);
-      transition: all 0.6s ease;
-      opacity: 0;
-      transform: translateY(40px);
-    }
-
-    .card.reveal {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    a.button-link {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 25px;
-      background-color: #e50914;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-
-    a.button-link:hover {
-      background-color: #fff;
-      color: #e50914;
-    }
-
-    .back-button {
-      display: block;
-      margin: 40px auto;
-      padding: 12px 25px;
-      background-color: #e50914;
-      color: white;
-      font-weight: bold;
-      border-radius: 5px;
+      background-color: #ffffff;
+      padding: 25px;
+      border-radius: 12px;
       text-align: center;
-      width: fit-content;
-      cursor: pointer;
-      transition: 0.3s;
+      transition: transform 0.3s, background 0.3s;
+      box-shadow: 0 0 12px rgba(246, 114, 128, 0.3);
     }
 
-    .back-button:hover {
-      background-color: #fff;
-      color: #e50914;
+    .card:hover {
+      transform: scale(1.05);
     }
 
-    #contactForm {
-      max-width: 600px;
-      margin: 0 auto;
-      text-align: left;
+    .card i {
+      font-size: 40px;
+      margin-bottom: 15px;
+      color: #f67280;
     }
 
-    #contactForm label {
-      display: block;
-      margin-top: 15px;
-      margin-bottom: 5px;
-      font-weight: bold;
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+      color: #333;
     }
 
-    #contactForm input,
-    #contactForm textarea {
+    .card p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .about-section, .certifications-section, .projects-section, .contact-section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 30px;
+      background-color: #fff0f3;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .about-section h2, .certifications-section h2, .projects-section h2, .contact-section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #f67280;
+    }
+
+    .about-section p, .certifications-section ul, .projects-section p, .contact-section p {
+      line-height: 1.7;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    .certifications-section ul {
+      padding-left: 20px;
+    }
+
+    .certifications-section li {
+      margin-bottom: 10px;
+    }
+
+    form input, form textarea {
       width: 100%;
       padding: 10px;
-      border-radius: 5px;
-      border: none;
       margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
     }
 
-    #contactForm button {
-      background-color: #e50914;
+    form button {
+      background-color: #f67280;
+      color: white;
+      padding: 10px 20px;
       border: none;
-      padding: 12px 20px;
+      border-radius: 6px;
       font-weight: bold;
-      color: #fff;
-      border-radius: 5px;
-      transition: 0.3s;
       cursor: pointer;
     }
 
-    #contactForm button:hover {
-      background-color: #fff;
-      color: #e50914;
-    }
-
-    .contact-info {
-      margin-top: 20px;
-      text-align: left;
-      padding-left: 10px;
-    }
-
-    .contact-info p {
-      margin: 8px 0;
-    }
-
-    .contact-info i {
-      margin-right: 8px;
-      color: #e50914;
+    form button:hover {
+      background-color: #e94e77;
     }
 
     footer {
-      background-color: #111;
+      margin-top: 50px;
       text-align: center;
-      padding: 15px;
+      padding: 20px;
+      background-color: #111;
       color: #888;
-      margin-top: 40px;
     }
   </style>
 </head>
 <body>
-  <h1>Welcome to Aishwarya's Portfolio</h1>
-  <div style="text-align: center; margin-top: 10px;">
-    <button id="themeToggle" class="back-button">Toggle Dark/Light Mode</button>
-  </div>
-  <div id="profile-screen">
-    <div class="profiles">
-      <div class="profile" onclick="showSection('about')">
-        <img src="red-fuzzy.png" alt="About" />
-        <div class="profile-name">About</div>
-      </div>
-      <div class="profile" onclick="showSection('certifications')">
-        <img src="yellow-fuzzy.png" alt="Certifications" />
-        <div class="profile-name">Certifications</div>
-      </div>
-      <div class="profile" onclick="showSection('projects')">
-        <img src="blue-fuzzy.png" alt="Projects" />
-        <div class="profile-name">Projects</div>
-      </div>
-      <div class="profile" onclick="showSection('contact')">
-        <img src="grey-fuzzy.png" alt="Contact Me" />
-        <div class="profile-name">Contact Me</div>
-      </div>
+  <header>
+    <h1>Welcome to Aishwarya's Portfolio</h1>
+    <button id="themeToggle">Toggle Theme</button>
+  </header>
+
+  <main class="grid">
+    <div class="card" onclick="document.getElementById('about-section').scrollIntoView({behavior: 'smooth'})">
+      <i class="fas fa-user"></i>
+      <h3>About</h3>
+      <p>Learn more about who I am and what I do.</p>
     </div>
-  </div>
+    <div class="card" onclick="document.getElementById('certifications-section').scrollIntoView({behavior: 'smooth'})">
+      <i class="fas fa-certificate"></i>
+      <h3>Certifications</h3>
+      <p>Explore my credentials and courses.</p>
+    </div>
+    <div class="card" onclick="document.getElementById('projects-section').scrollIntoView({behavior: 'smooth'})">
+      <i class="fas fa-code"></i>
+      <h3>Projects</h3>
+      <p>View the web apps and tools I've built.</p>
+    </div>
+    <div class="card" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">
+      <i class="fas fa-envelope"></i>
+      <h3>Contact Me</h3>
+      <p>Reach out for collaborations or queries.</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-image"></i>
+      <h3>Gallery</h3>
+      <p>Photos and memories from my journey.</p>
+    </div>
+  </main>
 
-  <div id="main-content">
-    <section id="about" class="card">
-      <h2>About Me</h2>
-      <p>Hi! I’m <strong>Aishwarya Ravi</strong>, a passionate web developer and aspiring cybersecurity analyst with over 3 years of experience in building responsive, secure, and user-friendly web applications. I specialize in <strong>HTML, CSS, JavaScript, Node.js, and MySQL</strong>, and I love turning ideas into clean, functional digital experiences.</p>
-      <p>I completed my schooling at <strong>St. Xavier’s Sr. Sec. School, Jaipur</strong> and am a <strong>national-level volleyball player</strong>, which has taught me discipline, teamwork, and leadership—both on the court and in my tech journey.</p>
-      <p>I'm currently expanding my knowledge in <strong>cybersecurity</strong>, focusing on secure coding, log analysis, system vulnerabilities, and Linux file permissions. I’m also exploring real-world attack simulations and defensive techniques as part of my learning.</p>
-      <p>Outside of tech, I actively <strong>volunteer with NGOs</strong>, teach underprivileged children, and lead initiatives that promote digital literacy and youth empowerment. I strongly believe in <strong>tech for good</strong>—using technology to uplift communities and drive positive change.</p>
-      <p>I’m a lifelong learner who regularly explores emerging trends in web development and cybersecurity, and I enjoy building open-source projects, reading tech blogs, and participating in online challenges and hackathons.</p>
-    </section>
+  <section id="about-section" class="about-section">
+    <h2>About Me</h2>
+    <p>Hello! I’m <strong>Aishwarya Ravi</strong>, a web developer and aspiring cybersecurity analyst who finds joy in solving problems with code and compassion. I have over 3 years of experience building responsive and secure web applications using technologies like <strong>HTML, CSS, JavaScript, Node.js, and MySQL</strong>.</p>
+    <p>I’m a national-level volleyball player and a proud alumna of <strong>St. Xavier’s Sr. Sec. School, Jaipur</strong>. Sports have taught me teamwork, leadership, and resilience—qualities I carry into every project.</p>
+    <p>Outside of tech, I actively volunteer with NGOs to teach and uplift underprivileged communities. I strongly believe in <strong>Tech for Good</strong> and use my skills to contribute to initiatives that make an impact.</p>
+    <p>Currently, I’m diving deeper into cybersecurity—exploring secure coding practices, log analysis, and system vulnerabilities while continuously learning through online labs and projects.</p>
+  </section>
 
-    <section id="certifications" class="card">
-      <h2>Certifications</h2>
-      <ul>
-        <li>Data Analytics and Visualization Job Simulation at ACCENTURE North America by Forage.</li>
-        <li>Digital Engineering by NASSCOM.</li>
-        <li>Cyber security basics course by Coursera.</li>
-        <li>Network fundamentals course by Infosys.</li>
-        <li>Agile Project Management by HP Life.</li>
-        <li>Data Science & Analytics by HP Life.</li>
-      </ul>
-    </section>
+  <section id="certifications-section" class="certifications-section">
+    <h2>Certifications</h2>
+    <ul>
+      <li>Data Analytics and Visualization Job Simulation – Accenture (Forage)</li>
+      <li>Digital Engineering – NASSCOM</li>
+      <li>Cybersecurity Basics – Coursera</li>
+      <li>Network Fundamentals – Infosys Springboard</li>
+      <li>Agile Project Management – HP Life</li>
+      <li>Data Science & Analytics – HP Life</li>
+    </ul>
+  </section>
 
-    <section id="projects" class="card">
-      <h2>Projects</h2>
-      <p><strong>Aesthetic Calculator</strong><br>
-        <a href="https://aixhwrya.github.io/AestheticCalc/" class="button-link" target="_blank">View Calculator</a>
-      </p>
-      <p><strong>Hangman Web App</strong><br>
-        <a href="https://aixhwrya.github.io/Hangman-web-app/" class="button-link" target="_blank">Play Hangman</a>
-      </p>
-      <p><strong>FashhTrack</strong><br>
-        <a href="https://github.com/aixhwrya/Fashhtrack" class="button-link" target="_blank">View on GitHub</a>
-      </p>
-    </section>
+  <section id="projects-section" class="projects-section">
+    <h2>Projects</h2>
+    <p><strong>Aesthetic Calculator</strong> – A stylish, fully functional calculator with animated transitions.<br>
+    <a href="https://aixhwrya.github.io/AestheticCalc/" target="_blank">View Project</a></p>
+    <p><strong>Hangman Web App</strong> – An interactive word guessing game built with JavaScript.<br>
+    <a href="https://aixhwrya.github.io/Hangman-web-app/" target="_blank">Play Game</a></p>
+    <p><strong>FashhTrack</strong> – A boutique management system that handles orders, inventory, and design tracking.<br>
+    <a href="https://github.com/aixhwrya/Fashhtrack" target="_blank">View on GitHub</a></p>
+  </section>
 
-    <section id="contact" class="card">
-      <h2>Contact Me</h2>
-      <form id="contactForm" action="https://formspree.io/f/xwpopnow" method="POST">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required />
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-      <div class="contact-info">
-        <p><i>📧</i> <a href="mailto:aishwarya101ravi@gmail.com" style="color:#e50914;">aishwarya101ravi@gmail.com</a></p>
-        <p><i>📞</i> 7300101413</p>
-      </div>
-    </section>
+  <section id="contact-section" class="contact-section">
+    <h2>Contact Me</h2>
+    <form action="https://formspree.io/f/xwpopnow" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p>You can also reach me at <a href="mailto:aishwarya101ravi@gmail.com">aishwarya101ravi@gmail.com</a> or call me at <strong>7300101413</strong>.</p>
+  </section>
 
-    <div class="back-button" onclick="goBack()">← Back to Profile Selection</div>
-    <footer>
-      <p>&copy; 2025 Aishwarya Ravi. All rights reserved.</p>
-    </footer>
-  </div>
+  <footer>
+    &copy; 2025 Aishwarya Ravi. All rights reserved.
+  </footer>
 
   <script>
     document.getElementById("themeToggle").addEventListener("click", () => {
       document.body.classList.toggle("light-mode");
     });
-
-    function showSection(sectionId) {
-      document.getElementById("profile-screen").style.display = "none";
-      document.getElementById("main-content").style.display = "block";
-      const sections = ["about", "certifications", "projects", "contact"];
-      sections.forEach(id => {
-        const el = document.getElementById(id);
-        if (el) {
-          el.style.display = id === sectionId ? "block" : "none";
-          if (id === sectionId) {
-            el.classList.add("reveal");
-          }
-        }
-      });
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-
-    function goBack() {
-      document.getElementById("main-content").style.display = "none";
-      document.getElementById("profile-screen").style.display = "block";
-    }
   </script>
 </body>
 </html>
