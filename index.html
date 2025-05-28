@@ -157,6 +157,10 @@
   <header>
     <h1>Welcome to Aishwarya's Portfolio</h1>
   </header>
+  <div id="quoteBox" style="text-align: center; font-size: 1.2rem; font-style: italic; margin: 20px; color: var(--teal);">
+  “Loading inspiration…”
+</div>
+
 
   <div class="nav-buttons">
     <a href="#about" class="nav-button"><i class="fas fa-user"></i> About</a>
@@ -179,6 +183,14 @@
     <p>I’m diving deeper into cybersecurity with a strong interest in ethical hacking, network protection, and vulnerability analysis.</p>
 
     <p><em>Fun fact:</em> I never miss a chance to travel or take up new leadership opportunities—both help me grow as a curious, connected creator.</p>
+<div style="text-align: center; margin-top: 20px;">
+  <a href="CV_Aishwarya_Ravi.docx" download style="background-color: var(--teal); color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold;">📄 Download CV</a>
+</div>
+<div style="text-align:center; margin-top: 30px;">
+  <h3 style="color: var(--teal);">📄 Resume Preview</h3>
+  <iframe src="CV_Aishwarya_Ravi.docx" width="100%" height="500px" style="border: 2px solid var(--teal); border-radius: 10px;"></iframe>
+  <p style="font-size: 0.9rem;">(Use the “Download CV” button above if this doesn’t preview properly on your browser.)</p>
+</div>
 
     <div class="socials">
       <a href="mailto:aishwarya101ravi@gmail.com"><i class="fas fa-envelope"></i> Email</a>
@@ -187,7 +199,7 @@
       <a href="https://instagram.com/aixhwrya" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
     </div>
     
-Vanity URL name
+
 
   </section>
 
@@ -216,17 +228,20 @@ Vanity URL name
     <a href="https://github.com/aixhwrya/Fashhtrack" target="_blank">View on GitHub</a></p>
   </section>
 
-  <section id="gallery">
-    <h2>Gallery</h2>
-    <div class="gallery">
-      <img src="image1.jpg" alt="Gallery Image 1">
-      <img src="image2.jpg" alt="Gallery Image 2">
-      <img src="image3.jpg" alt="Gallery Image 3">
-      <img src="image4.jpg" alt="Gallery Image 4">
-      <img src="image5.jpg" alt="Gallery Image 5">
-     
-    </div>
-  </section>
+  <div class="gallery" id="galleryGrid">
+  <img src="image1.jpg" alt="Gallery Image 1" onclick="openModal(this.src)">
+  <img src="image2.jpg" alt="Gallery Image 2" onclick="openModal(this.src)">
+  <img src="image3.jpg" alt="Gallery Image 3" onclick="openModal(this.src)">
+  <img src="image4.jpg" alt="Gallery Image 4" onclick="openModal(this.src)">
+  <img src="image5.jpg" alt="Gallery Image 5" onclick="openModal(this.src)">
+ 
+</div>
+
+<!-- Modal Viewer -->
+<div id="modalView" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:9999;">
+  <img id="modalImg" src="" style="max-width:90%; max-height:90%; border:4px solid white; border-radius:10px;">
+  <span onclick="closeModal()" style="position:absolute; top:20px; right:40px; color:white; font-size:30px; cursor:pointer;">&times;</span>
+</div>
 
   <section id="contact">
   <h2>Contact Me</h2>
@@ -252,31 +267,41 @@ Vanity URL name
   <footer>
     <p>&copy; 2025 Aishwarya Ravi. All rights reserved.</p>
   </footer>
-
- <script>
-  const form = document.getElementById("contactForm");
-  const msg = document.getElementById("formMessage");
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const data = new FormData(form);
-    fetch(form.action, {
-      method: "POST",
-      body: data,
-      headers: { 'Accept': 'application/json' }
-    }).then(response => {
-      if (response.ok) {
-        msg.innerText = "✅ Message sent successfully!";
-        form.reset();
-      } else {
-        msg.innerText = "❌ Something went wrong. Please try again.";
-      }
-    }).catch(() => {
-      msg.innerText = "❌ Error submitting the form.";
-    });
+<script>
+  // Dark mode toggle
+  const toggle = document.getElementById("themeToggle");
+  toggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
   });
+
+  // Quote rotation
+  const quotes = [
+    "“Code is like humor. When you have to explain it, it’s bad.” – Cory House",
+    "“First, solve the problem. Then, write the code.” – John Johnson",
+    "“Cybersecurity is much more than a matter of IT.” – Stephane Nappo",
+    "“Creativity is intelligence having fun.” – Albert Einstein",
+    "“Every great developer you know got there by solving problems they were unqualified to solve until they actually did it.” – Patrick McKenzie"
+  ];
+
+  let quoteIndex = 0;
+  function rotateQuote() {
+    document.getElementById("quoteBox").innerText = quotes[quoteIndex];
+    quoteIndex = (quoteIndex + 1) % quotes.length;
+  }
+  rotateQuote();
+  setInterval(rotateQuote, 7000); // every 7 seconds
+
+  // Gallery Modal Functions
+  function openModal(src) {
+    document.getElementById("modalView").style.display = "flex";
+    document.getElementById("modalImg").src = src;
+  }
+
+  function closeModal() {
+    document.getElementById("modalView").style.display = "none";
+  }
 </script>
+
 
 </body>
 </html>
