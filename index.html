@@ -7,17 +7,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
+    :root {
+      --primary: #008080;
+      --secondary: #ffd6d6;
+      --text-dark: #1a1a1a;
+      --text-light: #ffffff;
+    }
+
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
-      background-color: #fdf6f0;
-      color: #1a1a1a;
+      background-color: #fffaf6;
+      color: var(--text-dark);
       transition: background 0.3s, color 0.3s;
     }
 
     .light-mode {
       background-color: #ffffff;
-      color: #1a1a1a;
+      color: var(--text-dark);
     }
 
     header {
@@ -33,16 +40,10 @@
       padding: 10px 20px;
       border-radius: 20px;
       border: none;
-      background-color: #f67280;
-      color: #fff;
+      background-color: var(--primary);
+      color: white;
       font-weight: bold;
       cursor: pointer;
-      transition: 0.3s;
-    }
-
-    #themeToggle:hover {
-      background-color: #fff;
-      color: #f67280;
     }
 
     h1 {
@@ -65,7 +66,7 @@
       border-radius: 12px;
       text-align: center;
       transition: transform 0.3s, background 0.3s;
-      box-shadow: 0 0 12px rgba(246, 114, 128, 0.3);
+      box-shadow: 0 0 12px rgba(0, 128, 128, 0.15);
     }
 
     .card:hover {
@@ -75,7 +76,7 @@
     .card i {
       font-size: 40px;
       margin-bottom: 15px;
-      color: #f67280;
+      color: var(--primary);
     }
 
     .card h3 {
@@ -84,38 +85,29 @@
       color: #333;
     }
 
-    .card p {
-      font-size: 0.95rem;
-      color: #555;
-    }
-
-    .about-section, .certifications-section, .projects-section, .contact-section {
+    section {
       max-width: 900px;
       margin: 60px auto;
       padding: 30px;
-      background-color: #fff0f3;
+      background-color: #e6fffa;
       border-radius: 12px;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
     }
 
-    .about-section h2, .certifications-section h2, .projects-section h2, .contact-section h2 {
+    section h2 {
       text-align: center;
       margin-bottom: 20px;
-      color: #f67280;
+      color: var(--primary);
     }
 
-    .about-section p, .certifications-section ul, .projects-section p, .contact-section p {
+    section p, section li {
       line-height: 1.7;
       font-size: 1rem;
       color: #333;
     }
 
-    .certifications-section ul {
+    ul {
       padding-left: 20px;
-    }
-
-    .certifications-section li {
-      margin-bottom: 10px;
     }
 
     form input, form textarea {
@@ -127,7 +119,7 @@
     }
 
     form button {
-      background-color: #f67280;
+      background-color: var(--primary);
       color: white;
       padding: 10px 20px;
       border: none;
@@ -136,8 +128,16 @@
       cursor: pointer;
     }
 
-    form button:hover {
-      background-color: #e94e77;
+    .social-links {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .social-links a {
+      color: var(--primary);
+      margin: 0 10px;
+      font-size: 1.5rem;
+      text-decoration: none;
     }
 
     footer {
@@ -156,44 +156,41 @@
   </header>
 
   <main class="grid">
-    <div class="card" onclick="document.getElementById('about-section').scrollIntoView({behavior: 'smooth'})">
+    <div class="card" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
       <i class="fas fa-user"></i>
       <h3>About</h3>
       <p>Learn more about who I am and what I do.</p>
     </div>
-    <div class="card" onclick="document.getElementById('certifications-section').scrollIntoView({behavior: 'smooth'})">
+    <div class="card" onclick="document.getElementById('certifications').scrollIntoView({behavior: 'smooth'})">
       <i class="fas fa-certificate"></i>
       <h3>Certifications</h3>
       <p>Explore my credentials and courses.</p>
     </div>
-    <div class="card" onclick="document.getElementById('projects-section').scrollIntoView({behavior: 'smooth'})">
+    <div class="card" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">
       <i class="fas fa-code"></i>
       <h3>Projects</h3>
       <p>View the web apps and tools I've built.</p>
     </div>
-    <div class="card" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'})">
+    <div class="card" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
       <i class="fas fa-envelope"></i>
       <h3>Contact Me</h3>
       <p>Reach out for collaborations or queries.</p>
     </div>
-    <div class="card">
-      <i class="fas fa-image"></i>
-      <h3>Gallery</h3>
-      <p>Photos and memories from my journey.</p>
-    </div>
   </main>
 
-  <section id="about-section" class="about-section">
+  <section id="about">
     <h2>About Me</h2>
-    <p>Hello! I’m <strong>Aishwarya Ravi</strong>, a web developer and aspiring cybersecurity analyst who finds joy in solving problems with code and compassion. I have over 3 years of experience building responsive and secure web applications using technologies like <strong>HTML, CSS, JavaScript, Node.js, and MySQL</strong>.</p>
-    <p>I’m a national-level volleyball player and a proud alumna of <strong>St. Xavier’s Sr. Sec. School, Jaipur</strong>. Sports have taught me teamwork, leadership, and resilience—qualities I carry into every project.</p>
-    <p>Outside of tech, I actively volunteer with NGOs to teach and uplift underprivileged communities. I strongly believe in <strong>Tech for Good</strong> and use my skills to contribute to initiatives that make an impact.</p>
-    <p>Currently, I’m diving deeper into cybersecurity—exploring secure coding practices, log analysis, and system vulnerabilities while continuously learning through online labs and projects.</p>
+    <p>Hi! I’m <strong>Aishwarya Ravi</strong>, a web developer and cybersecurity enthusiast currently pursuing a <strong>Bachelor of Computer Applications (BCA)</strong> at <strong>Kristu Jayanti College</strong> (2023–2026).</p>
+    <p>I build secure, interactive, and user-focused web applications using HTML, CSS, JavaScript, Node.js, and MySQL. With over 3 years of hands-on project experience, I love turning creative ideas into functional, real-world solutions.</p>
+    <p>My tech journey is deeply rooted in a passion for social good—I actively volunteer with NGOs, mentor students, and explore how technology can empower underserved communities.</p>
+    <p>Outside of tech, I’m a national-level volleyball player and thrive in team-based, high-performance environments. I’m also diving deeper into cybersecurity with a strong interest in ethical hacking, network protection, and vulnerability analysis.</p>
+    <p>Fun fact: I never miss a chance to travel or take up a new leadership opportunity—both help me grow as a curious, connected creator.</p>
   </section>
 
-  <section id="certifications-section" class="certifications-section">
+  <section id="certifications">
     <h2>Certifications</h2>
     <ul>
+      <li>Foundations of Cybersecurity – Google (Coursera)</li>
       <li>Data Analytics and Visualization Job Simulation – Accenture (Forage)</li>
       <li>Digital Engineering – NASSCOM</li>
       <li>Cybersecurity Basics – Coursera</li>
@@ -203,17 +200,19 @@
     </ul>
   </section>
 
-  <section id="projects-section" class="projects-section">
+  <section id="projects">
     <h2>Projects</h2>
-    <p><strong>Aesthetic Calculator</strong> – A stylish, fully functional calculator with animated transitions.<br>
-    <a href="https://aixhwrya.github.io/AestheticCalc/" target="_blank">View Project</a></p>
-    <p><strong>Hangman Web App</strong> – An interactive word guessing game built with JavaScript.<br>
-    <a href="https://aixhwrya.github.io/Hangman-web-app/" target="_blank">Play Game</a></p>
-    <p><strong>FashhTrack</strong> – A boutique management system that handles orders, inventory, and design tracking.<br>
-    <a href="https://github.com/aixhwrya/Fashhtrack" target="_blank">View on GitHub</a></p>
+    <ul>
+      <li><strong>Aesthetic Calculator</strong>: A beautiful, animated calculator built with HTML, CSS, and JS.<br>
+        🔗 <a href="https://aixhwrya.github.io/AestheticCalc/" target="_blank">Live Demo</a></li>
+      <li><strong>Hangman Web App</strong>: A fun JavaScript word guessing game with dynamic UI.<br>
+        🎮 <a href="https://aixhwrya.github.io/Hangman-web-app/" target="_blank">Play Game</a></li>
+      <li><strong>FashhTrack</strong>: A full-stack boutique management system with Node.js, MySQL, and role-based access.<br>
+        💻 <a href="https://github.com/aixhwrya/Fashhtrack" target="_blank">GitHub Repo</a></li>
+    </ul>
   </section>
 
-  <section id="contact-section" class="contact-section">
+  <section id="contact">
     <h2>Contact Me</h2>
     <form action="https://formspree.io/f/xwpopnow" method="POST">
       <input type="text" name="name" placeholder="Your Name" required>
@@ -221,7 +220,12 @@
       <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
       <button type="submit">Send Message</button>
     </form>
-    <p>You can also reach me at <a href="mailto:aishwarya101ravi@gmail.com">aishwarya101ravi@gmail.com</a> or call me at <strong>7300101413</strong>.</p>
+    <div class="social-links">
+      <a href="mailto:aishwarya101ravi@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://github.com/aixhwrya" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/aishwaryaravi" title="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://instagram.com/yourhandle" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
   </section>
 
   <footer>
