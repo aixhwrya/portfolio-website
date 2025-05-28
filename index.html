@@ -177,18 +177,22 @@
     <p>I'm passionate about tech for good, mentoring students, volunteering with NGOs, and helping bridge digital gaps.</p>
     <p>Outside of tech, I’m a national-level volleyball player, former general captain, and 2023 volleyball coach assistant.</p>
 
-    <!-- View / Download CV Button -->
-<div style="text-align: center; margin-top: 20px;">
-  <a href="CV_Aishwarya_Ravi.pdf" target="_blank" rel="noopener noreferrer" style="background-color: var(--teal); color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold;">
+   <!-- CV Buttons -->
+<div style="text-align: center; margin-top: 30px;">
+  <a href="CV_Aishwarya_Ravi.pdf" target="_blank" rel="noopener noreferrer"
+     style="background-color: var(--teal); color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin: 10px;">
     📄 View / Download CV
   </a>
+  <button onclick="toggleResume()" style="background-color: var(--teal); color: white; padding: 12px 24px; border-radius: 6px; border: none; font-weight: bold; margin: 10px; cursor: pointer;">
+    🖥️ Preview Resume
+  </button>
 </div>
 
-<!-- Resume Preview -->
-<div style="text-align:center; margin-top: 30px;">
-  <h3 style="color: var(--teal);">📄 Resume Preview</h3>
-  <iframe src="CV_Aishwarya_Ravi.pdf" width="100%" height="500px" style="border: 2px solid var(--teal); border-radius: 10px;"></iframe>
-  <p style="font-size: 0.9rem;">(If the preview does not load, click the button above to open in a new tab.)</p>
+<!-- CV Preview (Initially Hidden) -->
+<div id="resumePreview" style="display: none; text-align:center; margin-top: 20px;">
+  <iframe src="CV_Aishwarya_Ravi.pdf" width="100%" height="500px"
+          style="border: 2px solid var(--teal); border-radius: 10px;"></iframe>
+  <p style="font-size: 0.9rem;">Click the preview button again to hide this.</p>
 </div>
 
 
