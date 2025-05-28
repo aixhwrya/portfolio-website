@@ -157,10 +157,10 @@
   <header>
     <h1>Welcome to Aishwarya's Portfolio</h1>
   </header>
-  <div id="quoteBox" style="text-align: center; font-size: 1.2rem; font-style: italic; margin: 20px; color: var(--teal);">
-  “Loading inspiration…”
-</div>
 
+  <div id="quoteBox" style="text-align: center; font-size: 1.2rem; font-style: italic; margin: 20px; color: var(--teal);">
+    “Loading inspiration…”
+  </div>
 
   <div class="nav-buttons">
     <a href="#about" class="nav-button"><i class="fas fa-user"></i> About</a>
@@ -172,28 +172,22 @@
 
   <section id="about">
     <h2>About Me</h2>
-    <p>Hi! I’m <strong>Aishwarya Ravi</strong>, a web developer and cybersecurity enthusiast currently pursuing a <strong>Bachelor of Computer Applications (BCA)</strong> at <strong>Kristu Jayanti College</strong> (2023–2026).</p>
+    <p>I’m <strong>Aishwarya Ravi</strong>, a web developer and cybersecurity enthusiast currently pursuing BCA at Kristu Jayanti College (2023–2026).</p>
+    <p>I create interactive, secure, and user-focused web apps using HTML, CSS, JavaScript, Node.js, and MySQL.</p>
+    <p>I'm passionate about tech for good, mentoring students, volunteering with NGOs, and helping bridge digital gaps.</p>
+    <p>Outside of tech, I’m a national-level volleyball player, former general captain, and 2023 volleyball coach assistant.</p>
 
-    <p>I build secure, interactive, and user-focused web applications using <strong>HTML, CSS, JavaScript, Node.js, and MySQL</strong>. With over 3 years of hands-on project experience, I love turning creative ideas into functional, real-world solutions.</p>
+    <div style="text-align: center; margin-top: 20px;">
+      <a href="CV_Aishwarya_Ravi.docx" target="_blank" style="background-color: var(--teal); color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold;">
+        📄 View / Download CV
+      </a>
+    </div>
 
-    <p>My tech journey is deeply rooted in a passion for social good—I actively volunteer with NGOs, mentor students, and explore how technology can empower underserved communities.</p>
-
-    <p>Outside of tech, I’m a national-level volleyball player, served as <strong>General Captain</strong> in school, led the school volleyball team, and was honored as <strong>All-Rounder of the Year</strong>. In 2023, I also assisted my coach during summer training to mentor younger athletes.</p>
-
-    <p>I’m diving deeper into cybersecurity with a strong interest in ethical hacking, network protection, and vulnerability analysis.</p>
-
-    <p><em>Fun fact:</em> I never miss a chance to travel or take up new leadership opportunities—both help me grow as a curious, connected creator.</p>
-<div style="text-align: center; margin-top: 20px;">
-  <a href="CV_Aishwarya_Ravi.docx" target="_blank" style="background-color: var(--teal); color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold;">
-    📄 View / Download CV
-  </a>
-</div>
-
-<div style="text-align:center; margin-top: 30px;">
-  <h3 style="color: var(--teal);">📄 Resume Preview</h3>
-  <iframe src="CV_Aishwarya_Ravi.docx" width="100%" height="500px" style="border: 2px solid var(--teal); border-radius: 10px;"></iframe>
-  <p style="font-size: 0.9rem;">(Use the “Download CV” button above if this doesn’t preview properly on your browser.)</p>
-</div>
+    <div style="text-align:center; margin-top: 30px;">
+      <h3 style="color: var(--teal);">📄 Resume Preview</h3>
+      <iframe src="CV_Aishwarya_Ravi.docx" width="100%" height="500px" style="border: 2px solid var(--teal); border-radius: 10px;"></iframe>
+      <p style="font-size: 0.9rem;">(If not visible, please click “View CV” above.)</p>
+    </div>
 
     <div class="socials">
       <a href="mailto:aishwarya101ravi@gmail.com"><i class="fas fa-envelope"></i> Email</a>
@@ -201,9 +195,6 @@
       <a href="https://www.linkedin.com/in/aishwarya-ravi-2a8449301" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
       <a href="https://instagram.com/aixhwrya" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
     </div>
-    
-
-
   </section>
 
   <section id="certifications">
@@ -221,90 +212,102 @@
 
   <section id="projects">
     <h2>Projects</h2>
-    <p><strong>Aesthetic Calculator</strong> – A stylish calculator with animated transitions.<br>
+    <p><strong>Aesthetic Calculator</strong><br>
     <a href="https://aixhwrya.github.io/AestheticCalc/" target="_blank">View Project</a></p>
 
-    <p><strong>Hangman Web App</strong> – An interactive word guessing game built with JavaScript.<br>
+    <p><strong>Hangman Web App</strong><br>
     <a href="https://aixhwrya.github.io/Hangman-web-app/" target="_blank">Play Game</a></p>
 
-    <p><strong>FashhTrack</strong> – A boutique management system handling orders, inventory, and design tracking.<br>
+    <p><strong>FashhTrack</strong> – A boutique management system.<br>
     <a href="https://github.com/aixhwrya/Fashhtrack" target="_blank">View on GitHub</a></p>
   </section>
 
-  <div class="gallery" id="galleryGrid">
-  <img src="image1.jpg" alt="Gallery Image 1" onclick="openModal(this.src)">
-  <img src="image2.jpg" alt="Gallery Image 2" onclick="openModal(this.src)">
-  <img src="image3.jpg" alt="Gallery Image 3" onclick="openModal(this.src)">
-  <img src="image4.jpg" alt="Gallery Image 4" onclick="openModal(this.src)">
-  <img src="image5.jpg" alt="Gallery Image 5" onclick="openModal(this.src)">
- 
-</div>
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery" id="galleryGrid">
+      <img src="image1.jpg" alt="Event 1" onclick="openModal(this.src)">
+      <img src="image2.jpg" alt="Workshop" onclick="openModal(this.src)">
+      <img src="image3.jpg" alt="Hackathon" onclick="openModal(this.src)">
+      <img src="image4.jpg" alt="Volunteer Work" onclick="openModal(this.src)">
+    </div>
+  </section>
 
-<!-- Modal Viewer -->
-<div id="modalView" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:9999;">
-  <img id="modalImg" src="" style="max-width:90%; max-height:90%; border:4px solid white; border-radius:10px;">
-  <span onclick="closeModal()" style="position:absolute; top:20px; right:40px; color:white; font-size:30px; cursor:pointer;">&times;</span>
-</div>
+  <!-- Modal for Zoom Gallery -->
+  <div id="modalView" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:9999;">
+    <img id="modalImg" src="" style="max-width:90%; max-height:90%; border:4px solid white; border-radius:10px;">
+    <span onclick="closeModal()" style="position:absolute; top:20px; right:40px; color:white; font-size:30px; cursor:pointer;">&times;</span>
+  </div>
 
   <section id="contact">
-  <h2>Contact Me</h2>
-  <form id="contactForm" action="https://formspree.io/f/xwpopnow" method="POST" style="max-width: 600px; margin: auto;">
-    <label for="name">Your Name</label><br>
-    <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 6px; border: none;"><br>
+    <h2>Contact Me</h2>
+    <form id="contactForm" action="https://formspree.io/f/xwpopnow" method="POST" style="max-width: 600px; margin: auto;">
+      <label for="name">Your Name</label><br>
+      <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 6px; border: none;"><br>
 
-    <label for="email">Your Email</label><br>
-    <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 6px; border: none;"><br>
+      <label for="email">Your Email</label><br>
+      <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 6px; border: none;"><br>
 
-    <label for="message">Message</label><br>
-    <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 10px; border-radius: 6px; border: none;"></textarea><br>
+      <label for="message">Message</label><br>
+      <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 10px; border-radius: 6px; border: none;"></textarea><br>
 
-    <button type="submit" style="background-color: var(--teal); color: white; padding: 12px 24px; border: none; border-radius: 6px; cursor: pointer;">Send Message</button>
-  </form>
+      <button type="submit" style="background-color: var(--teal); color: white; padding: 12px 24px; border: none; border-radius: 6px; cursor: pointer;">Send Message</button>
+    </form>
 
-  <p id="formMessage" style="text-align:center; color: var(--teal); font-weight: bold; margin-top: 15px;"></p>
-
-  <p style="text-align: center; margin-top: 20px;">Or reach me at <strong><a href="mailto:aishwarya101ravi@gmail.com">aishwarya101ravi@gmail.com</a></strong></p>
-</section>
-
+    <p id="formMessage" style="text-align:center; color: var(--teal); font-weight: bold; margin-top: 15px;"></p>
+    <p style="text-align: center;">Or email me directly: <strong><a href="mailto:aishwarya101ravi@gmail.com">aishwarya101ravi@gmail.com</a></strong></p>
+  </section>
 
   <footer>
     <p>&copy; 2025 Aishwarya Ravi. All rights reserved.</p>
   </footer>
-<script>
-  // Dark mode toggle
-  const toggle = document.getElementById("themeToggle");
-  toggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-  });
 
-  // Quote rotation
-  const quotes = [
-    "“Code is like humor. When you have to explain it, it’s bad.” – Cory House",
-    "“First, solve the problem. Then, write the code.” – John Johnson",
-    "“Cybersecurity is much more than a matter of IT.” – Stephane Nappo",
-    "“Creativity is intelligence having fun.” – Albert Einstein",
-    "“Every great developer you know got there by solving problems they were unqualified to solve until they actually did it.” – Patrick McKenzie"
-  ];
+  <script>
+    const toggle = document.getElementById("themeToggle");
+    toggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+    });
 
-  let quoteIndex = 0;
-  function rotateQuote() {
-    document.getElementById("quoteBox").innerText = quotes[quoteIndex];
-    quoteIndex = (quoteIndex + 1) % quotes.length;
-  }
-  rotateQuote();
-  setInterval(rotateQuote, 7000); // every 7 seconds
+    const quotes = [
+      "“Code is like humor. When you have to explain it, it’s bad.” – Cory House",
+      "“First, solve the problem. Then, write the code.” – John Johnson",
+      "“Cybersecurity is much more than a matter of IT.” – Stephane Nappo",
+      "“Creativity is intelligence having fun.” – Albert Einstein",
+      "“Every great developer you know got there by solving problems they were unqualified to solve until they actually did it.” – Patrick McKenzie"
+    ];
+    let quoteIndex = 0;
+    function rotateQuote() {
+      document.getElementById("quoteBox").innerText = quotes[quoteIndex];
+      quoteIndex = (quoteIndex + 1) % quotes.length;
+    }
+    rotateQuote();
+    setInterval(rotateQuote, 7000);
 
-  // Gallery Modal Functions
-  function openModal(src) {
-    document.getElementById("modalView").style.display = "flex";
-    document.getElementById("modalImg").src = src;
-  }
+    function openModal(src) {
+      document.getElementById("modalView").style.display = "flex";
+      document.getElementById("modalImg").src = src;
+    }
 
-  function closeModal() {
-    document.getElementById("modalView").style.display = "none";
-  }
-</script>
+    function closeModal() {
+      document.getElementById("modalView").style.display = "none";
+    }
 
+    const form = document.getElementById("contactForm");
+    const msg = document.getElementById("formMessage");
 
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      fetch(form.action, {
+        method: "POST",
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        msg.innerText = response.ok ? "✅ Message sent successfully!" : "❌ Something went wrong.";
+        if (response.ok) form.reset();
+      }).catch(() => {
+        msg.innerText = "❌ Error submitting the form.";
+      });
+    });
+  </script>
 </body>
 </html>
